@@ -6,6 +6,11 @@
   --text-color: #434455;
   --text-title-color: #2e2f42;
   --text-light-color: #e7e9fc;
+  --logo-customers-color: #8e8f99;
+  --primery-hover-color: #404bbf;
+  --accent-hover-color: #31d0aa;
+
+  --bg-gradient: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
 }
 
 p,
@@ -120,8 +125,6 @@ body {
 }
 
 .header-navigation {
-  /* padding: 24px 0; */
-
   display: flex;
   margin-right: auto;
 }
@@ -150,7 +153,6 @@ body {
 }
 
 .header-contacts {
-  /* padding: 24px 0; */
   display: flex;
   gap: 40px;
 }
@@ -172,13 +174,24 @@ body {
 
 /* --------------Hero----------- */
 
-.hero {
-  text-align: center;
-  background-color: var(--primery-color);
+.overlay {
+  max-width: 1440px;
+  height: 600px;
+  background-image: var(--bg-gradient), url(../images/people-office.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+
   padding: 192px 0;
 }
 
-.hero > .container {
+.hero {
+  text-align: center;
+  background-color: var(--primery-color);
+}
+
+.hero-text {
   width: 522px;
 }
 
@@ -229,7 +242,24 @@ body {
   max-width: 264px;
 }
 
+.advantages-item::before {
+  display: block;
+  content: "";
+  height: 112px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-image: url("../images/symbol-defs.svg#icon-antenna"); */
+  /* background-color: var(--accent-light-color); */
+  background-image: url("../images/symbol-defs.svg#icon-antenna");
+}
+
+.icon-strategy::before {
+  /* background-image: url("../images/symbol-defs.svg#icon-antenna"); */
+}
+
 .advantages .item-title {
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -277,10 +307,89 @@ body {
   text-align: center;
 }
 
+.team-soc-list {
+  display: flex;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.team-soc-item {
+  width: calc((100% -72px) / 4);
+  height: 40px;
+}
+
+.team-soc-link {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-soc-icon {
+  fill: var(--accent-light-color);
+}
+
+.team-soc-link:hover,
+.team-soc-link:focus {
+  background-color: var(--primery-hover-color);
+}
+
+/* -------------------Customers------------------- */
+.customers {
+  padding-top: 130px;
+}
+
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+
+.customers-item {
+  width: calc((100% -120px) / 6);
+  height: 88px;
+}
+.customers-link {
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--accent-light-color); */
+  border: 1px solid var(--logo-customers-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customers-icon {
+  fill: var(--logo-customers-color);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border-color: var(--primery-hover-color);
+}
+
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
+  fill: var(--primery-hover-color);
+}
+
 /* -----------------Footer-------------------- */
-.tagline {
+
+.footer {
   background-color: var(--primery-color);
   padding: 100px 0;
+}
+
+.footer > .container {
+  display: flex;
+}
+.footer-tegline {
+  max-width: 264px;
+  margin-right: 120px;
 }
 
 .tagline-logo {
@@ -293,17 +402,53 @@ body {
   color: var(--accent-light-color);
 }
 
-.tagline-logo:focus,
-.tagline-logo:hover {
-  /* border-bottom: 2px solid; */
-}
-
 .tagline-text {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-light-color);
-  max-width: 264px;
   margin-top: 16px;
+}
+
+.footer-social {
+  width: 208px;
+}
+.footer-soc-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--primery-white-color);
+}
+
+.footer-soc-list {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.footer-soc-item {
+  width: calc((100% -48px) / 4);
+  height: 40px;
+}
+
+.footer-soc-link {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-soc-icon {
+  fill: var(--accent-light-color);
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--accent-hover-color);
 }
 
 /* ------------------Portfolio------------- */
